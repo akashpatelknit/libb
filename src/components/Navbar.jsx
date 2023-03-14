@@ -37,7 +37,7 @@ const Navbar = () => {
               <Link to="/service">CT Exam Papers</Link>
             </li>
             <li>
-              <Link to="/contact">About Us</Link>
+              <Link to="/About">About Us</Link>
             </li>
             {isAuthenticated && (
               <li>
