@@ -56,7 +56,7 @@ import Home from "./components/Home";
 
 const App = () => {
   return (
-    <div>
+    <>
        <Router>
       <Navbar/>
       <Routes>
@@ -68,7 +68,7 @@ const App = () => {
       </Routes>
       </Router>
     
-    </div>
+    </>
   );
 };
 
