@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Add from "./components/Add";
+import About from "./components/About";
 
 import {BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -62,6 +63,7 @@ const App = () => {
           
         <Route path="/" element={<Home/>} />
         <Route path="/add" element={<Add/>} />
+        <Route path="/About" element={<About/>}/>
 
       </Routes>
       </Router>
