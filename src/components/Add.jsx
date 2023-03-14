@@ -1,47 +1,130 @@
-import React, { useState } from 'react'
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './Add.css'
+import React, { useState } from 'react';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './Add.css';
 
 const Add = () => {
-     const [year,setyear]=useState("")
-     const inputhandle=(e)=>{
-       e.preventDefault() 
-       setyear(e.target.value)
-     }
-     const  formsubmit=()=>{
+  const options = [
+    'First Year',
+    'Second Year',
+    'Third Year',
+    'FInal Year',
+    'MCA',
+  ];
+  const branch=['It','Cs','ECE','Mech','Civil','EL']
+  const [image, setImage] = useState('');
+  const [userdata, setUserdata] = useState({
+    year: '',
+    semester: '',
+    branch: '',
+    subject: '',
+    session: '',
+    url:''
+  });
 
-       console.log(year)
-     }
-     
-  return (
-    <div className='container' >
-      <div className="form">
-       <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Year</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-  </div>
-  <div class="form-group">
-   <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1" onChange={inputhandle}>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
+  const handleInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    console.log(name, value);
+    setUserdata({ ...userdata, [name]: value });
+  };
  
-  <button type="submit" class="btn btn-primary" onClick={formsubmit}>Submit</button>
-</form>
-      </div>
-    </div>
-  )
-}
+ const handleSubmit=async(e)=>{
+   e.preventDefault()
+     const data = new FormData();
+    data.append('file', image);
+    data.append('upload_preset', 'Library');
+    data.append('cloud_name', 'dcgqtiqoh');
+    await fetch('https://api.cloudinary.com/v1_1/dcgqtiqoh/image/upload', {
+      method: 'post',
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) =>{ console.log(data.url)
+       setUserdata({...userdata,url:data.url})
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      console.log(userdata)
+     const response=await fetch('http://localhost:4000/add',{
+    method:"POST",
+    body:JSON.stringify(userdata),
+    headers:{
+    'Content-Type':'application/json'
+    }
+   
+    })
+    const da=await response.json();
+   console.log( "hadfkhdshfasl",da)
+ }
+ 
 
-export default Add
+  return (
+    <div className="container">
+      <form action="" method="POST" onSubmit={handleSubmit}>
+        <div className="formm">
+          <div class="form-row">
+            <div class="form-item">
+              <label>Year</label>
+              <select name="year" onChange={handleInput}>
+                
+                {options.map((option, index) => {
+                  return <option key={index}>{option}</option>;
+                })}
+              </select>
+            </div>
+            <div class="form-item">
+              <label>Subject</label>
+              <input type="text" name="subject" onChange={handleInput} />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-item">
+              <label>Branch</label>
+             <select name="branch" onChange={handleInput}>
+                {branch.map((option, index) => {
+                  return <option key={index}>{option}</option>;
+                })}
+              </select>
+            </div>
+            
+            <div class="form-item">
+              <label>Semester</label>
+              <input
+                type="number"
+                name="semester"
+                min="1"
+                onChange={handleInput}
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-item form-item-no-grow">
+              <label>File</label>
+              <input type="file" name="cover" class="book-cover filepond" onChange={e=>setImage(e.target.files[0])}/>
+            </div>
+            <div class="form-item">
+              <label>Session</label>
+              <input type="text" name="session" onChange={handleInput} />
+            </div>
+          </div>
+          <br />
+          <div class="form-row">
+            <div className="form-item">
+              <div class="form-item form-item-no-grow">
+                <input  type="submit" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+      </form>
+      <img src={userdata.url} alt="BigCo Inc. logo"/>
+    </div>
+  );
+};
+
+export default Add;

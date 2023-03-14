@@ -92,6 +92,7 @@ body{
   text-transform: capitalize;
   color: rgba(124, 124, 139, 0.8);
   transition: 0.5s;
+  text-decoration: none;
   
 }
 .menu-link ul li:hover > a {
@@ -133,7 +134,7 @@ body{
 /* responsive css style  */
 @media (max-width: 1080px) {
   .main-nav {
-    height: 8rem;
+    height: 5rem;
     grid-template-columns: 2rem 3fr 3fr 1fr 2rem;
   }
 
@@ -147,7 +148,7 @@ body{
 /* responsive css style  */
 @media (max-width: 998px) {
   .main-nav {
-    height: 7rem;
+    height: 4rem;
     grid-template-columns: 2rem 2fr 3fr 2rem 2rem;
   }
 
