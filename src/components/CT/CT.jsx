@@ -12,6 +12,7 @@ const CT = () => {
     'MCA',
   ];
   const type='CT'
+  const url='https://libraryserver.vercel.app';
   const branch = ['It', 'Cs', 'ECE', 'Mech', 'Civil', 'EL'];
   const [year, setYear] = useState('');
   const [branchname, setBranchname] = useState('');
@@ -23,7 +24,7 @@ const CT = () => {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
       useEffect(() => {
         const fetchUpcoming = async () => {
-           let { data } = await axios.get(`http://localhost:4000/get`);
+           let { data } = await axios.get(`${url}/get`);
           data=data.filter(d=>d.type===type)
           setUpcomingMovies(data);
           let sub=data.map(d=>d.subject).filter(s=> s!==undefined && s!=='')

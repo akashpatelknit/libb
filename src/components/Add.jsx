@@ -12,6 +12,7 @@ const Add = () => {
     'FInal Year',
     'MCA',
   ];
+  const url='https://libraryserver.vercel.app';
   const branch = ['It', 'Cs', 'ECE', 'Mech', 'Civil', 'EL'];
   const [image, setImage] = useState('');
   const [year, setYear] = useState('');
@@ -25,7 +26,7 @@ const Add = () => {
   useEffect(() => {
   
     if (imgurl) {
-      fetch('http://localhost:4000/add', {
+      fetch(`${url}/add`, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
