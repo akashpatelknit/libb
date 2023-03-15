@@ -20,6 +20,7 @@ const Add = () => {
   const [subject, setSbject] = useState('');
   const [session, setSession] = useState('');
   const [imgurl, setUrl] = useState('');
+  const [type, setType] = useState('');
   const history = useNavigate();
   useEffect(() => {
   
@@ -35,6 +36,7 @@ const Add = () => {
           semester,
           subject,
           session,
+          type,
           url: imgurl,
         }),
       })
@@ -44,6 +46,7 @@ const Add = () => {
               M.toast({html: data.error,classes:"#c62828 red darken-3"})
            }
            else{
+           console.log(data)
                M.toast({html:"Created post Successfully",classes:"#43a047 green darken-1"})
                history('/')
            }
@@ -74,57 +77,7 @@ const Add = () => {
       });
   };
 
-  // const [session, setUserdata] = useState({
-  //   year: '',
-  //   semester: '',
-  //   branch: '',
-  //   subject: '',
-  //   session: '',
-  //   url:''
-  // });
-
-  //   const handleInput = (e) => {
-  //     const name = e.target.name;
-  //     const value = e.target.value;
-  //     console.log(name, value);
-  //     setUserdata({ ...userdata, [name]: value });
-  //   };
-
-  //  const handleSubmit=async(e)=>{
-  //    e.preventDefault()
-  //    console.log('1',userdata)
-  //      const data = new FormData();
-  //     data.append('file', image);
-  //     data.append('upload_preset', 'Library');
-  //     data.append('cloud_name', 'dcgqtiqoh');
-  //     await fetch('https://api.cloudinary.com/v1_1/dcgqtiqoh/image/upload', {
-  //       method: 'post',
-  //       body: data,
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) =>{
-  //       //  console.log('se',userdata)
-  //        setUserdata({...userdata,url:data.url}) ;
-  //       //  console.log('th',userdata)
-  //         console.log('upload to cloud')
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //       // console.log( 'fr',userdata)
-
-  //      await fetch('http://localhost:4000/add',{
-  //     method:"POST",
-  //     body:JSON.stringify(userdata),
-  //     headers:{
-  //     'Content-Type':'application/json'
-  //     }
-
-  //     }).then(()=>{
-  //     console.log('upload to db')
-  //     })
-
-  //  }
+  
 
   return (
     <div className="container">
@@ -134,6 +87,7 @@ const Add = () => {
             <div class="form-item">
               <label>Year</label>
               <select name="year" onChange={(e) => setYear(e.target.value)}>
+                <option>Year</option>
                 {options.map((option, index) => {
                   return <option key={index}>{option}</option>;
                 })}
@@ -155,8 +109,9 @@ const Add = () => {
               <select
                 name="branch"
                 onChange={(e) => setBranchname(e.target.value)}
-              >
+              > <option>Branch</option>
                 {branch.map((option, index) => {
+                
                   return <option key={index}>{option}</option>;
                 })}
               </select>
@@ -165,7 +120,7 @@ const Add = () => {
             <div class="form-item">
               <label>Semester</label>
               <input
-                type="number"
+                type="text"
                 name="semester"
                 min="1"
                 onChange={(e) => setSemester(e.target.value)}
@@ -174,14 +129,14 @@ const Add = () => {
           </div>
 
           <div class="form-row">
-            <div class="form-item form-item-no-grow">
-              <label>File</label>
-              <input
-                type="file"
-                name="cover"
-                class="book-cover filepond"
-                onChange={(e) => setImage(e.target.files[0])}
-              />
+           <div class="form-item">
+              <label>Type</label>
+             <select name="type" onChange={(e) => setType(e.target.value)}>
+               <option >Type</option>
+               <option >Book</option>                               
+               <option >Exam</option>
+               <option >CT</option>
+              </select>
             </div>
             <div class="form-item">
               <label>Session</label>
@@ -192,17 +147,28 @@ const Add = () => {
               />
             </div>
           </div>
-          <br />
+        
           <div class="form-row">
+             <div class="form-item form-item-no-grow">
+              <label>File</label>
+              <input
+                type="file"
+                name="cover"
+                class="book-cover filepond"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+            </div>
+             
             <div className="form-item">
-              <div class="form-item form-item-no-grow">
+              {/* <div class="form-item form-item-no-grow"> */}
+                <label>Upload</label>
                 <input type="submit" onClick={handleSubmit} />
               </div>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </form>
-      <img src={imgurl} alt="BigCo Inc. logo" />
+     
     </div>
   );
 };

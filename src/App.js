@@ -5,54 +5,10 @@ import About from "./components/About";
 
 import {BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-// const Home = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <section className="hero-section">
-//         <p>Subscribe to </p>
-//         <h1>Thapa Technical Home Page</h1>
-//       </section>
-//     </>
-//   );
-// };
+import Exam from "./components/Exam/Exam";
+import Book from "./components/Book/Book";
+import CT from "./components/CT/CT";
 
-// const About = () => {
-//   return (
-//     <>
-    
-//       <Navbar />
-//       <section className="hero-section">
-//         <p>Welcome to </p>
-//         <h1>Thapa Technical About Page</h1>
-//       </section>
-//     </>
-//   );
-// };
-
-// const Service = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <section className="hero-section">
-//         <p>Welcome to </p>
-//         <h1>Thapa Technical Service Page</h1>
-//       </section>
-//     </>
-//   );
-// };
-
-// const Contact = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <section className="hero-section">
-//         <p>Welcome to </p>
-//         <h1>Thapa Technical Contact Page</h1>
-//       </section>
-//     </>
-//   );
-// };
 
 const App = () => {
   return (
@@ -63,7 +19,10 @@ const App = () => {
           
         <Route path="/" element={<Home/>} />
         <Route path="/add" element={<Add/>} />
-        <Route path="/About" element={<About/>}/>
+        <Route path="/book" element={<Book/>} />
+        <Route path="/exam" element={<Exam/>} />
+        <Route path="/ct" element={<CT/>} />
+        <Route path="/about" element={<About/>}/>
 
       </Routes>
       </Router>

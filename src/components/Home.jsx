@@ -1,52 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './Home.scss'
+// import './Home.scss';
+import Row from './Row/Row';
 
-const Card = ({ img }) => <img className="card" src={img} alt="cover" />;
-
-
-const Row = ({ title, arr = [] }) => (
-    <div className="row">
-        <h2>{title}</h2>
-
-        <div>
-            {arr.map((item, index) => (<div className='card2'>
-                <Card key={index} img={`${item.url}`} />
-                 <a href={item.url} key={index} target='_blank' rel="noreferrer">Download</a>
-                 </div>
-            ))}
-        </div>
-    </div>
-);
 const Home = () => {
-  const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const [book, setbook] = useState([]);
+  const [exam, setexam] = useState([]);
+  const [ct, setct] = useState([]);
   useEffect(() => {
-    const fetchUpcoming = async () => {
-      
-         const {data}= await axios.get(`http://localhost:4000/get`);
-        setUpcomingMovies(data);
-
-      console.log(data);
-      
-      console.log('2upcomingMovies**', upcomingMovies);
+    const fetchbook = async () => {
+      let { data } = await axios.get(`http://localhost:4000/get`);
+      data=data.filter(b=>b.type==='Book')
+      setbook(data);
+    };
+    const fetchexam = async () => {
+      let { data } = await axios.get(`http://localhost:4000/get`);
+      data=data.filter(b=>b.type==='Exam')
+      setexam(data);
+    };
+    const fetchct = async () => {
+      let { data } = await axios.get(`http://localhost:4000/get`);
+      data=data.filter(b=>b.type==='CT')
+      setct(data);
     };
 
-    fetchUpcoming();
+    fetchbook();
+    fetchexam();
+    fetchct();
   }, []);
 
   return (
-   <section className="home">
-            {/* <Row title={"Now Playing"} arr={nowPlayingMovies} /> */}
-            <Row title={"Upcoming"} arr={upcomingMovies} />
-            <Row title={"Upcoming"} arr={upcomingMovies} />
-            <Row title={"Upcoming"} arr={upcomingMovies} />
-            <Row title={"Upcoming"} arr={upcomingMovies} />
-            {/* <Row title={"Top Rated"} arr={topRatedMovies} /> */}
-            {/* <Row title={"Popular"} arr={popularMovies} /> */}
-
-           
-        </section>
+    <section className="home">
+      <Row title={'Books'} arr={book} />
+      <Row title={'Exam Papers'} arr={exam} />
+      <Row title={'CT Papers'} arr={ct} />
+      
+    </section>
   );
 };
 

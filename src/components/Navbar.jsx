@@ -28,16 +28,16 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">Books</Link>
+              <Link to="/book">Books</Link>
             </li>
             <li>
               <Link to="/exam">Exam Papers</Link>
             </li>
              <li>
-              <Link to="/service">CT Exam Papers</Link>
+              <Link to="/ct">CT Exam Papers</Link>
             </li>
             <li>
-              <Link to="/About">About Us</Link>
+              <Link to="/about">About Us</Link>
             </li>
             {isAuthenticated && (
               <li>

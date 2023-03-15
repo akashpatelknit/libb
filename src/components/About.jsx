@@ -36,7 +36,7 @@ const About = () => {
       </div>
       <div className="container">
         <div className="container1">
-          {/* <img src={Myimage} alt="Myimage" className="imgStyle " /> */}
+          <img src={Myimage} alt="Myimage" className="imgStyle " />
           <div className="intro">
             <h4>AKASH PATEL</h4>
             <p>A Full Stack Developer</p>
