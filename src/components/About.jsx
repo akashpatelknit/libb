@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <div className="brief">
-        <p>
+        {/* <p>
           Welcome to our About Us page! We are a team of dedicated individuals
           who are passionate about delivering high-quality products and services
           to our customers. Our mission is to provide innovative solutions that
@@ -32,11 +32,11 @@ const About = () => {
           we are and what we do. If you have any questions or would like to
           learn more about our products and services, please don't hesitate to
           contact us
-        </p>
+        </p> */}
       </div>
       <div className="container">
         <div className="container1">
-          <img src={Myimage} alt="Myimage" className="imgStyle " />
+          {/* <img src={Myimage} alt="Myimage" className="imgStyle " /> */}
           <div className="intro">
             <h4>AKASH PATEL</h4>
             <p>A Full Stack Developer</p>
@@ -57,7 +57,7 @@ const About = () => {
           </div>
         </div>
         <div className="container1">
-          <img src={Myimage2} alt="Myimage" className="imgStyle" />
+          {/* <img src={Myimage2} alt="Myimage" className="imgStyle" /> */}
           <div className="intro">
             <h4>shivangi singh</h4>
             <p>abhi seekh rhe h</p>
