@@ -5,22 +5,23 @@ import axios from 'axios';
 import Row from './Row/Row';
 
 const Home = () => {
+const url='https://libraryserver.vercel.app';
   const [book, setbook] = useState([]);
   const [exam, setexam] = useState([]);
   const [ct, setct] = useState([]);
   useEffect(() => {
     const fetchbook = async () => {
-      let { data } = await axios.get(`http://localhost:4000/get`);
+      let { data } = await axios.get(`${url}/get`);
       data=data.filter(b=>b.type==='Book')
       setbook(data);
     };
     const fetchexam = async () => {
-      let { data } = await axios.get(`http://localhost:4000/get`);
+      let { data } = await axios.get(`${url}/get`);
       data=data.filter(b=>b.type==='Exam')
       setexam(data);
     };
     const fetchct = async () => {
-      let { data } = await axios.get(`http://localhost:4000/get`);
+      let { data } = await axios.get(`${url}/get`);
       data=data.filter(b=>b.type==='CT')
       setct(data);
     };
