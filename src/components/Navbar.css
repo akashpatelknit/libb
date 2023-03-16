@@ -26,9 +26,7 @@ li {
   list-style: none;
 }
 
-/* 
- 
-/* navbar style start  */
+
 body{
  background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
 }
@@ -40,7 +38,7 @@ body{
   grid-template-columns: 10rem 1fr 2fr 10rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
+  background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
 }
 
 .logo {
@@ -69,7 +67,6 @@ body{
 
 
 
-/* ----------- Grid part ends ----------------- */
 
 .logo h2 {
   font-size: 2.5rem;
@@ -110,7 +107,6 @@ body{
 
 
 
-/* hero section   */
 
 .hero-section {
   height: 80vh;
@@ -131,7 +127,7 @@ body{
   text-align: center;
 }
 
-/* responsive css style  */
+
 @media (max-width: 1080px) {
   .main-nav {
     height: 5rem;
@@ -145,7 +141,6 @@ body{
   }
 }
 
-/* responsive css style  */
 @media (max-width: 998px) {
   .main-nav {
     height: 4rem;
@@ -164,11 +159,11 @@ body{
   .mobile-menu-link {
     grid-column: 2/4;
     position: relative;
-    /* z-index: 99; */
+    z-index: 99;
   }
 
   .mobile-menu-link {
-    /* background-color: white; */
+   
     height: 20rem;
     display: grid;
     grid-column: 2/5;
@@ -218,11 +213,15 @@ body{
     font-size: 2.5rem;
   }
 }
-
+.hamburger-menu button{
+background-color: transparent;
+outline: none;
+}
 @media (max-width: 798px) {
   .main-nav {
     height: 6rem;
     grid-template-columns: 1rem 2fr 1fr 1fr 1rem;
+    background-color: black;
   }
 
   .logo,
