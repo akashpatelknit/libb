@@ -25,33 +25,34 @@ const Navbar = () => {
         >
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Home</Link>
             </li>
             <li>
-              <Link to="/book">Books</Link>
+              <Link to="/book" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Books</Link>
             </li>
             <li>
-              <Link to="/exam">Exam Papers</Link>
+              <Link to="/exam" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Exam Papers</Link>
             </li>
              <li>
-              <Link to="/ct">CT Exam Papers</Link>
+              <Link to="/ct" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>CT Exam Papers</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>About Us</Link>
             </li>
             {isAuthenticated && (
               <li>
-                <Link to="/add">Add Book</Link>
+                <Link to="/add" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Add Book</Link>
               </li>
             )}
             {isAuthenticated ? (
               <li>
                 <Link
                   to="/"
-                  onClick={() =>
+                  onClick={() =>{
+                     setShowMediaIcons(!showMediaIcons)
                     logout({
                       logoutParams: { returnTo: window.location.origin },
-                    })
+                    })}
                   }
                 >
                   Log Out
@@ -59,7 +60,9 @@ const Navbar = () => {
               </li>
             ) : (
               <li>
-                <Link to="/" onClick={() => loginWithRedirect()}>
+                <Link to="/" onClick={() =>{ 
+                setShowMediaIcons(!showMediaIcons)
+                loginWithRedirect() }}>
                   Login
                 </Link>
               </li>
@@ -69,9 +72,8 @@ const Navbar = () => {
 
         <div className="social-media">
           <div className="hamburger-menu">
-            <a href="/#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
-              <GiHamburgerMenu />
-            </a>
+            <GiHamburgerMenu  onClick={() => {setShowMediaIcons(!showMediaIcons)}}/>
+         
           </div>
         </div>
       </nav>
