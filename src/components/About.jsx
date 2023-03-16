@@ -13,10 +13,10 @@ const About = () => {
               <p>Full Stack Developer and <br/> Programmer</p>
               <div class="buttons">
                 <ul>
-                  <li><a href="/https://www.linkedin.com/in/akash-patel-9330aa201/"><FaLinkedin/></a></li>
-                  <li><a href="/https://github.com/akashpatelknit"><FaGithub/></a></li>
-                  <li><a href="/https://www.instagram.com/akashknitian_/"><FaInstagram/></a></li>
-                  <li><a href="/"><FaFacebookF/></a></li>
+                  <li><a href="https://www.linkedin.com/in/akash-patel-9330aa201/" target="_blank"><FaLinkedin/></a></li>
+                  <li><a href="https://github.com/akashpatelknit" target="_blank"><FaGithub/></a></li>
+                  <li><a href="https://www.instagram.com/akashknitian_/" target="_blank"><FaInstagram/></a></li>
+                  <li><a href=""><FaFacebookF/></a></li>
                 </ul>
                 
               </div>
@@ -40,10 +40,10 @@ const About = () => {
               <p>Full Stack Developer and <br/> Programmer</p>
               <div class="buttons">
                 <ul>
-                  <li><a href="/https://www.linkedin.com/in/shivangi-singh-b13476204/"><FaLinkedin/></a></li>
-                  <li><a href="/https://github.com/shivangi462"><FaGithub/></a></li>
-                  <li><a href="/https://www.instagram.com/shivangi03__/"><FaInstagram/></a></li>
-                  <li><a href="/https://www.facebook.com/profile.php?id=100046689500920"><FaFacebookF/></a></li>
+                  <li><a href="https://www.linkedin.com/in/shivangi-singh-b13476204/" target="_blank"><FaLinkedin/></a></li>
+                  <li><a href="https://github.com/shivangi462" target="_blank"><FaGithub/></a></li>
+                  <li><a href="https://www.instagram.com/shivangi03__/" target="_blank"><FaInstagram/></a></li>
+                  <li><a href="https://www.facebook.com/profile.php?id=100046689500920" target="_blank"><FaFacebookF/></a></li>
                 </ul>
                 
               </div>
