@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./About.css";
 import { FaFacebookF, FaGithub , FaInstagram , FaLinkedin} from "react-icons/fa";
 const About = () => {
@@ -59,6 +60,7 @@ const About = () => {
                 </ul>
             </div>
         </div>
+        
       </div>
     </>
   );

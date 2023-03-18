@@ -41,7 +41,7 @@ const Navbar = () => {
             </li>
             {isAuthenticated && (
               <li>
-                <Link to="/add" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Add Book</Link>
+                <Link to="/add" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Add</Link>
               </li>
             )}
             {isAuthenticated ? (
