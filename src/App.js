@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+
 import Add from "./components/Add";
 import About from "./components/About";
 
@@ -26,7 +27,7 @@ const App = () => {
 
       </Routes>
       </Router>
-    
+     
     </>
   );
 };

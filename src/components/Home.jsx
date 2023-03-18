@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+
 // import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import './Home.scss';
 import Row from './Row/Row';
@@ -32,12 +33,15 @@ const url='https://libraryserver.vercel.app';
   }, []);
 
   return (
+    <>
     <section className="home">
       <Row title={'Books'} arr={book} />
       <Row title={'Exam Papers'} arr={exam} />
       <Row title={'CT Papers'} arr={ct} />
-      
+    
     </section>
+     
+     </>
   );
 };
 
