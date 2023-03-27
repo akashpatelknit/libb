@@ -8,7 +8,7 @@ const Row = ({ title, arr = [] }) => (
       {arr.map((item, index) => (
         <div className="card2">
           <Card key={index} img={`${item.url}`} />
-          <a href={item.url} key={index+1} download="proposed_file_name"target="_blank" rel="noreferrer">
+          <a href={item.url} key={index+1} download target="_blank" rel="noreferrer">
             Download
           </a>
         </div>

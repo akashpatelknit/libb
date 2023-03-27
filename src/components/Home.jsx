@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState ,useMemo} from 'react';
 import axios from 'axios';
 
 // import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import './Home.scss';
 import Row from './Row/Row';
+import RowBook from './Row/RowBook';
 
 const Home = () => {
 const url='https://libraryserver.vercel.app';
   const [book, setbook] = useState([]);
   const [exam, setexam] = useState([]);
   const [ct, setct] = useState([]);
-  useEffect(() => {
+  useMemo(() => {
     const fetchbook = async () => {
       let { data } = await axios.get(`${url}/get`);
       data=data.filter(b=>b.type==='Book')
+      console.log(data)
       setbook(data);
     };
     const fetchexam = async () => {
@@ -35,7 +37,7 @@ const url='https://libraryserver.vercel.app';
   return (
     <>
     <section className="home">
-      <Row title={'Books'} arr={book} />
+      <RowBook title={'Books'} arr={book} />
       <Row title={'Exam Papers'} arr={exam} />
       <Row title={'CT Papers'} arr={ct} />
     

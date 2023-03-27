@@ -1,8 +1,9 @@
 import React from "react";
-
+import Aos from "aos";
 import "./About.css";
 import { FaFacebookF, FaGithub , FaInstagram , FaLinkedin} from "react-icons/fa";
 const About = () => {
+
   return (
     <>
       <div className="container">

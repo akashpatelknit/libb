@@ -28,6 +28,7 @@ const Add = () => {
     if (imgurl) {
       fetch(`${url}/add`, {
         method: 'post',
+        
         headers: {
           'Content-Type': 'application/json',
         },
@@ -39,18 +40,12 @@ const Add = () => {
           session,
           type,
           url: imgurl,
-        }),
+        }) 
       })
         .then((res) => res.json())
-        .then((data) => {
-           if(data.error){
-              M.toast({html: data.error,classes:"#c62828 red darken-3"})
-           }
-           else{
-           console.log(data)
-               M.toast({html:"Created post Successfully",classes:"#43a047 green darken-1"})
-               history('/')
-           }
+        .then(() => {
+            window.alert('You have successfully uploaded an image!');
+            history(`/`);
         })
         .catch((err) => {
           console.log(err);
