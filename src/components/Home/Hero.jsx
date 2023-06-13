@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="hero">
       <div className="left">
         <div className="head_title">
-          <h1>What Book Are You Looking For</h1>
+          <h2>What Book Are You Looking For</h2>
         </div>
         <div className="disc">
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium neque modi voluptatibus, fugiat ullam sit delectus nisi doloribus, sapiente maxime in. Dolore labore sunt aspernatur vel suscipit provident ea distinctio?</p>
