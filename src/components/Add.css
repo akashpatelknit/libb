@@ -1,0 +1,120 @@
+
+.container {
+  width: 80%;
+  /* height: 70vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid white; */
+  margin-top: 2rem;
+}
+.formm {
+  width: 100%;
+}
+
+:root {
+  --form-label-font-size: 1.2rem;
+  --form-input-background-color: hsl(var(--color-base-hue), 100%, 31%);
+  --form-input-border-color: hsl(var(--color-base-hue), 100%, 50%);
+  --form-input-border-color-light: hsl(var(--color-base-hue), 100%, 80%);
+}
+:root {
+  --color-base-hue: 200;
+  --color-danger-hue-offset: 180;
+  --color-danger-hue: calc(
+    var(--color-base-hue) - var(--color-danger-hue-offset)
+  );
+  --color-background-dark: hsl(var(--color-base-hue), 100%, 8%);
+  --color-background-light: hsl(var(--color-base-hue), 100%, 16%);
+  --color-text-light: hsl(var(--color-base-hue), 100%, 87%);
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.form-item:first-child {
+  margin-left: 0;
+}
+
+.form-item-no-grow {
+  flex-grow: 0;
+}
+
+.form-row-end {
+  justify-content: flex-end;
+}
+
+.form-item > label {
+  font-size: var(--form-label-font-size);
+  margin-bottom: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.form-item input,
+.form-item select,
+.form-item textarea {
+  height: 2rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--form-input-border-color);
+  background-color: var(--form-input-background-color);
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: 'Gotham Rounded';
+  outline: none;
+}
+
+.form-item textarea {
+  height: 100%;
+  resize: none;
+}
+
+.form-item select option {
+  background-color: black;
+}
+
+.form-item input:focus,
+.form-item select:focus,
+.form-item textarea:focus {
+  border-color: var(--form-input-border-color-light);
+}
+
+.filepond--root {
+  font-family: 'Gotham Rounded';
+  margin-bottom: 0;
+}
+
+.filepond--panel-root {
+  background-color: var(--form-input-background-color);
+  border: 1px solid var(--form-input-border-color);
+}
+
+.filepond--drop-label {
+  /* color: var(--color-text-light); */
+  font-size: inherit;
+}
+ img{
+ width: 30px;
+ }
+@media screen and (max-width: 780px) {
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+  .form-item {
+    flex-direction: column;
+    margin-left: 0;
+  }
+}
