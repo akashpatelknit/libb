@@ -4,7 +4,7 @@ const geturl=(uri)=>{
   let str=uri;
   let front="http://res.cloudinary.com/dcgqtiqoh/image/upload"
   let back=str.replace("http://res.cloudinary.com/dcgqtiqoh/image/upload","");
-  return front+"/fl_attachment/"+back;
+  return front+"/fl_attachment"+back;
 }
 const Row = ({ title,loading, arr = [] }) => (
   
