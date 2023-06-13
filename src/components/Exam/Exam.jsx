@@ -18,18 +18,21 @@ const Exam = () => {
   const [semester, setSemester] = useState();
   const [subject, setSbject] = useState('');
   const [ys,setYs]=useState([]);
+  const [loading, setLoading] = useState(false);
   // const [type, setType] = useState('');
   const type='Exam'
   const [search,setsearch]=useState([])
   const [upcomingMovies, setUpcomingMovies] = useState([]);
       useEffect(() => {
         const fetchUpcoming = async () => {
+          setLoading(true)
           let { data } = await axios.get(`${url}/get`);
           data=data.filter(d=>d.type===type)
           setUpcomingMovies(data);
           let sub=data.map(d=>d.subject).filter(s=> s!==undefined && s!=='')
           sub=[...new Set(sub)]
           setYs(sub)
+          setLoading(false)
           // console.log(sub)
         };
 
@@ -115,8 +118,8 @@ const Exam = () => {
     </section>
     </div>
     <section className="home">
-      <Row title={'Recentaly Added'} arr={upcomingMovies} />
-      <Row title={'Search Results'} arr={search} />
+      <Row title={'Recentaly Added'} loading={loading} arr={upcomingMovies} />
+      <Row title={'Search Results'} loading={loading} arr={search} />
       
     </section>
     </>

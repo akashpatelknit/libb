@@ -118,5 +118,45 @@ body::-webkit-scrollbar-thumb {
 }
 .pdf{
 font-size: 10rem;
-color: #DC1B20;
+// color: #DC1B20;
+}
+
+.card2{
+  height: 150px;
+  width: 120px;
+  background-color: #FFE4C9;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.card3{
+  height: 150px;
+  width: 120px;
+  background-color: #EEF2F3;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+}
+.card3 span{
+  font-size: small;
+  text-align: center;
+}
+.card3 ,.card2 a{
+  font-size: 1rem;
+}
+.row-item{
+  display: flex;
+  gap: 1rem;
+}
+#sub{
+  font-weight: 600;
+}
+#icon{
+  font-size: 40px;
 }

@@ -5,6 +5,7 @@ import axios from 'axios';
 // import './Home.scss';
 import Row from './Row/Row';
 import RowBook from './Row/RowBook';
+import Hero from './Home/Hero';
 
 const Home = () => {
 const url='https://libraryserver.vercel.app';
@@ -37,6 +38,7 @@ const url='https://libraryserver.vercel.app';
   return (
     <>
     <section className="home">
+      <Hero/>
       <RowBook title={'Books'} arr={book} />
       <Row title={'Exam Papers'} arr={exam} />
       <Row title={'CT Papers'} arr={ct} />

@@ -1,15 +1,32 @@
 import './Row.scss'
-const Card = ({ img }) => <img className="card" src={img} alt="cover" />;
-const Row = ({ title, arr = [] }) => (
+import { AiOutlineCloudDownload } from 'react-icons/ai';
+const geturl=(uri)=>{
+  let str=uri;
+  let front="http://res.cloudinary.com/dcgqtiqoh/image/upload"
+  let back=str.replace("http://res.cloudinary.com/dcgqtiqoh/image/upload","");
+  return front+"/fl_attachment/"+back;
+}
+const Row = ({ title,loading, arr = [] }) => (
+  
   <div className="row">
-    <h2>{title}</h2>
+    {
+      loading?<h2>{title} Loading...</h2>:<h2>{title}</h2>
+    }
+    
 
-    <div>
+    <div className='row-item'>
       {arr.map((item, index) => (
-        <div className="card2">
-          <Card key={index} img={`${item.url}`} />
-          <a href={item.url} key={index+1} download target="_blank" rel="noreferrer">
-            Download
+        <div className="card3">
+       
+          <span id='sub'>{item.subject}</span>
+          <span>{item.year} {item.branch}</span>
+          
+          <span>Semester {item.semester}</span>
+          <a download={item.url} href={geturl(item.url)}
+           target="_blank" rel="noreferrer"
+          >
+            <AiOutlineCloudDownload id='icon' />
+           
           </a>
         </div>
       ))}

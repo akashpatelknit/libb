@@ -3,7 +3,6 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Add.css';
 import { useNavigate } from 'react-router-dom';
 
-import M from 'materialize-css'
 const Add = () => {
   const options = [
     'First Year',
@@ -22,6 +21,7 @@ const Add = () => {
   const [session, setSession] = useState('');
   const [imgurl, setUrl] = useState('');
   const [type, setType] = useState('');
+  const [loading, setLoading] = useState(false);
   const history = useNavigate();
   useEffect(() => {
   
@@ -45,6 +45,7 @@ const Add = () => {
         .then((res) => res.json())
         .then(() => {
             window.alert('You have successfully uploaded an image!');
+            setLoading(true)
             history(`/`);
         })
         .catch((err) => {
@@ -54,6 +55,7 @@ const Add = () => {
   }, [imgurl]);
 
   const handleSubmit = (e) => {
+  setLoading(true)
    e.preventDefault()
     const data = new FormData();
     data.append('file', image);
@@ -156,11 +158,12 @@ const Add = () => {
             </div>
              
             <div className="form-item">
-              {/* <div class="form-item form-item-no-grow"> */}
-                <label>Upload</label>
+              {
+               loading?<label>Uploading...</label>:<label>Upload</label>
+              }
+                
                 <input type="submit" onClick={handleSubmit} />
               </div>
-            {/* </div> */}
           </div>
         </div>
       </form>
