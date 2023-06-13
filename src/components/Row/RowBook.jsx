@@ -4,7 +4,7 @@ import { BsFileEarmarkPdfFill } from 'react-icons/bs';
 import { AiOutlineCloudDownload } from 'react-icons/ai';
 const geturl=(uri)=>{
   let str=uri;
-  let front="http://res.cloudinary.com/dcgqtiqoh/image/upload"
+  let front="https://res.cloudinary.com/dcgqtiqoh/image/upload"
   let back=str.replace("http://res.cloudinary.com/dcgqtiqoh/image/upload","");
   return front+"/fl_attachment/"+back;
 }
