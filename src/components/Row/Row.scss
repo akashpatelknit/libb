@@ -6,6 +6,7 @@
   > h2 {
     margin: 0.3rem;
     font-weight: 400;
+    color: #EEF2F3;
   }
 
   > div {
@@ -24,10 +25,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   
 }
 .card3{
-  height: 150px;
+  height: 155px;
   width: 120px;
   background-color: #EEF2F3;
   border-radius: .5rem;
@@ -36,6 +38,8 @@
   justify-content: space-evenly;
   align-items: center;
   gap: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  margin-bottom: 5px;
 }
 .card3 span{
   font-size: small;
@@ -51,6 +55,7 @@
   overflow:auto;
   overflow-x: auto;
   scroll-behavior: smooth;
+  // height: 155px;
   
 }
 #sub{

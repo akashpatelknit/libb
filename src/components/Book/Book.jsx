@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 // import './Exam.css';
 import Row from '../Row/Row';
 import axios from 'axios'
+import Partical from '../Partical/Partical';
 
 const Book = () => {
   const options = [
@@ -47,6 +48,7 @@ const Book = () => {
 
   return (<>
    <div className="main">
+    <Partical/>
     <section>
       <form onSubmit={handleSubmit}>
        

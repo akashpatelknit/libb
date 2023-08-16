@@ -10,7 +10,7 @@ const Row = ({ title,loading, arr = [] }) => (
   
   <div className="row">
     {
-      loading?<h2>{title} Loading...</h2>:<h2>{title}</h2>
+      loading?<h2 style={{color:'white'}}>{title} Loading...</h2>:<h2>{title}</h2>
     }
     
 
