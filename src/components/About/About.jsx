@@ -2,11 +2,13 @@ import React from "react";
 import Aos from "aos";
 import "./About.css";
 import { FaFacebookF, FaGithub , FaInstagram , FaLinkedin} from "react-icons/fa";
+import Partical from "../Partical/Partical";
 const About = () => {
 
   return (
     <>
       <div className="container">
+        <Partical/>
         <div class="card-container">
             {/* <span class="pro">About Me</span> */}
               <img class="round" src='https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg' alt="user" />

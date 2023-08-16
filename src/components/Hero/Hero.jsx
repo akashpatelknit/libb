@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from "./sunset.png"
-import "./hero.css"
+import "./hero.scss"
+import Partical from '../Partical/Partical';
 const Hero = () => {
   return (
     <div className="hero">
@@ -18,6 +19,7 @@ const Hero = () => {
       <div className="right">
         <img src={logo} alt="" />
       </div>
+      <Partical/>
     </div>
   );
 };

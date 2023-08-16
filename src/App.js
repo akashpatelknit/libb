@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 import Add from "./components/Add";
-import About from "./components/About";
+import About from "./components/About/About";
 
 import {BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -14,7 +14,7 @@ import CT from "./components/CT/CT";
 const App = () => {
   return (
     <>
-       <Router>
+      <Router>
       <Navbar/>
       <Routes>
         
