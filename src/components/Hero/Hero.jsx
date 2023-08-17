@@ -1,27 +1,51 @@
 import React from 'react';
-import logo from "./sunset.png"
-import "./hero.scss"
+import './hero.scss';
 import Partical from '../Partical/Partical';
+import { heroCard } from '../../data';
+import { Link } from 'react-router-dom';
+import { Box, Stack, Text } from '@chakra-ui/react';
 const Hero = () => {
-  return (
-    <div className="hero">
-      <div className="left">
-        <div className="head_title">
-          <h2>What Book Are You Looking For</h2>
-        </div>
-        <div className="disc">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium neque modi voluptatibus, fugiat ullam sit delectus nisi doloribus, sapiente maxime in. Dolore labore sunt aspernatur vel suscipit provident ea distinctio?</p>
-        </div>
-        <div className="buttons">
-          <button>explore now</button>
-        </div>
-      </div>
-      <div className="right">
-        <img src={logo} alt="" />
-      </div>
-      <Partical/>
-    </div>
-  );
+	return (
+		<div className="hero">
+			<div className="hero-item">
+				{heroCard.map((item) => {
+					return (
+						<Stack
+							background={'white'}
+							width={'200px'}
+							height={'180px'}
+							borderRadius={'1rem'}
+							padding={'1rem'}
+							key={item.id}
+						>
+							<Link to={item.link}>
+								<Box
+									height={'100px'}
+									fontSize={'3rem'}
+									display={'flex'}
+									justifyContent={'center'}
+									alignItems={'center'}
+									fontWeight={'600'}
+								>
+									{item.icon}
+								</Box>
+								<hr />
+								<Box textAlign={'center'}>
+									<Text
+										textDecoration={'none'}
+										fontSize={'1.2rem'}
+									>
+										{item.title}
+									</Text>
+								</Box>
+							</Link>
+						</Stack>
+					);
+				})}
+			</div>
+			<Partical />
+		</div>
+	);
 };
 
 export default Hero;

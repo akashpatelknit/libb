@@ -14,7 +14,7 @@ const Navbar = () => {
       <nav className="main-nav">
         <div className="logo">
           <h2>
-            <span>P</span>aper<span>s</span>elf
+            <span>P</span>aper<span>s</span>helf
           </h2>
         </div>
 
