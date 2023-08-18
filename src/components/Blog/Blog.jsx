@@ -3,6 +3,7 @@ import './Blog.scss';
 import { gql, GraphQLClient } from 'graphql-request';
 import BlogCard from './BlogCard';
 import { useState, useEffect } from 'react';
+import { Heading, HStack, Image, Stack, Text, VStack } from '@chakra-ui/react';
 const graphcms = new GraphQLClient(
 	'https://api-ap-south-1.hygraph.com/v2/cllffz1q5546101umad8oesvt/master'
 );
@@ -41,16 +42,27 @@ const Blog = () => {
 
 	return (
 		<main>
-			{posts.map((post) => (
-				<BlogCard
-					title={post.title}
-					url={post.coverPhoto.url}
-					author={post.author}
-					key={post.id}
-					datePublished={post.datePublished}
-					slug={post.slug}
-				/>
-			))}
+			<HStack width={'80%'} margin={'auto'}>
+				<Stack display={'flex'} >
+					{posts.map((post) => (
+						<BlogCard
+							title={post.title}
+							url={post.coverPhoto.url}
+							author={post.author}
+							key={post.id}
+							datePublished={post.datePublished}
+							slug={post.slug}
+						/>
+					))}
+				</Stack>
+				<VStack display={['','none']}>
+					<Heading >Authors</Heading>
+					<HStack>
+						<Image src={"https://media.graphassets.com/2usHOOHTNmXoLEgPKO2F"}/>
+						<Text>Akash Patel</Text>
+					</HStack>
+				</VStack>
+			</HStack>
 		</main>
 	);
 };

@@ -1,4 +1,12 @@
-import { Box, Image, Stack, Text } from '@chakra-ui/react';
+import {
+	Box,
+	Heading,
+	Image,
+	Stack,
+	Text,
+	HStack,
+	VStack,
+} from '@chakra-ui/react';
 import { gql, GraphQLClient } from 'graphql-request';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -6,29 +14,6 @@ import { useParams } from 'react-router-dom';
 const graphcms = new GraphQLClient(
 	'https://api-ap-south-1.hygraph.com/v2/cllffz1q5546101umad8oesvt/master'
 );
-// const QUERY = gql`
-// 	query Post($slug: String!) {
-// 		post(where: { slug: $slug }) {
-// 			id
-// 			title
-// 			datePublished
-// 			slug
-// 			content {
-// 				html
-// 			}
-// 			author {
-// 				name
-// 				avatar {
-// 					url
-// 				}
-// 			}
-// 			coverPhoto {
-// 				id
-// 				url
-// 			}
-// 		}
-// 	}
-// `;
 const QUERY = gql`
 	{
 		posts {
@@ -65,18 +50,43 @@ const Slug = () => {
 		console.log(post);
 	}, [slug]);
 	return (
-		<Stack>
-			<Image src={post?.coverPhoto?.url} />
-			<Box>
-				<Image src={post?.author?.avatar?.url} />
-				<Box>
-					<Text>{post?.author?.name}</Text>
-					<Text>{post?.datePublished}</Text>
-				</Box>
+		<Stack width={['80%', '80%']} margin={'auto'} mt={'1rem'}>
+			<Box width={'100%'} margin={'auto'}>
+				<Image
+					src={post?.coverPhoto?.url}
+					width={'100%'}
+					margin={'auto'}
+					borderRadius={'1rem'}
+				/>
 			</Box>
-			<Box></Box>
-			<Text>{post?.title}</Text>
-			<Box dangerouslySetInnerHTML={{ __html: post?.content?.html }}></Box>
+
+			<HStack
+				display={'flex'}
+				justifyContent={'space-evenly'}
+				alignItems={'center'}
+			>
+				<Box width={'50%'}>
+					<Image
+						src={post?.author?.avatar?.url}
+						width={['20%', '25%']}
+						borderRadius={'60%'}
+					/>
+				</Box>
+				<Box width={'50%'} textAlign={'end'}>
+					<Text fontSize={'sm'} fontWeight={'bold'}>
+						Author: {post?.author?.name}
+					</Text>
+					<Text>Date-Posted: {post?.datePublished}</Text>
+				</Box>
+			</HStack>
+			<hr />
+			<Heading>{post?.title}</Heading>
+			<Box
+				width={'100%'}
+				margin={'auto'}
+				overflowX={'scroll'}
+				dangerouslySetInnerHTML={{ __html: post?.content?.html }}
+			></Box>
 		</Stack>
 	);
 };
