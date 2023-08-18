@@ -9,6 +9,8 @@ import Home from "./components/Home";
 import Exam from "./components/Exam/Exam";
 import Book from "./components/Book/Book";
 import CT from "./components/CT/CT";
+import Blog from "./components/Blog/Blog";
+import Slug from "./components/Blog/Post/Slug"
 
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
         <Route path="/exam" element={<Exam/>} />
         <Route path="/ct" element={<CT/>} />
         <Route path="/about" element={<About/>}/>
+        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/posts/:slug" element={<Slug/>}/>
 
       </Routes>
       </Router>
