@@ -1,25 +1,15 @@
-import { HStack, VStack,Stack } from '@chakra-ui/react';
+import { HStack, VStack, Stack, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const Programming = () => {
 	return (
 		<>
-			<Stack direction={['row', 'column']} width={'80%'}>
-				<VStack
-					width={['70%', '100%']}
-					background={'red'}
-					height={'300px'}
-				>
-					fdg
-				</VStack>
-
-				<VStack
-					width={['30%', '100%']}
-					background={'yellow'}
-					height={'300px'}
-				>
-					fj
-				</VStack>
+			<Stack  width={'80%'} margin={'auto'} height={'80vh'} alignItems={'center'}
+      justifyContent={'center'}
+      >
+				<Text fontSize={'6rem'} fontWeight={'bold+'}>
+          Coming Soon........
+        </Text>
 			</Stack>
 		</>
 	);

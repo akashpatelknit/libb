@@ -12,6 +12,8 @@ import CT from "./components/CT/CT";
 import Blog from "./components/Blog/Blog";
 import Slug from "./components/Blog/Post/Slug"
 import Programming from "./pages/Programming/Programming";
+import Projects from "./pages/Projects/Projects";
+import Portfolio from "./pages/Portfolio/Portfolio";
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/posts/:slug" element={<Slug/>}/>
         <Route path="/programming" element={<Programming/>}/>
+        <Route path="/portfolio" element={<Portfolio/>}/>
+        <Route path="/project" element={<Projects/>}/>
 
       </Routes>
       </Router>
