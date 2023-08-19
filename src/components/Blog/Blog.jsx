@@ -41,9 +41,9 @@ const Blog = () => {
 	}, []);
 
 	return (
-		<main>
-			<HStack width={'80%'} margin={'auto'}>
-				<Stack display={'flex'} >
+		<main >
+			<HStack width={'80%'} margin={'auto'} display={'flex'}>
+				<Stack className='blog-tem' >
 					{posts.map((post) => (
 						<BlogCard
 							title={post.title}
@@ -55,7 +55,7 @@ const Blog = () => {
 						/>
 					))}
 				</Stack>
-				<VStack display={['','none']}>
+				<VStack display={[]}>
 					<Heading >Authors</Heading>
 					<HStack>
 						<Image src={"https://media.graphassets.com/2usHOOHTNmXoLEgPKO2F"}/>

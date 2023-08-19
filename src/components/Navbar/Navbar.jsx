@@ -27,6 +27,7 @@ const Navbar = () => {
             <li>
               <Link to="/" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Home</Link>
             </li>
+            
             <li>
               <Link to="/book" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Books</Link>
             </li>
