@@ -17,8 +17,12 @@ const Hero = () => {
 							borderRadius={'1rem'}
 							padding={'1rem'}
 							key={item.id}
+							// marginTop={'4rem'}
 						>
-							<Link to={item.link}>
+							<Link
+								to={item.link}
+								style={{ textDecoration: 'none' }}
+							>
 								<Box
 									height={'100px'}
 									fontSize={'3rem'}
@@ -26,14 +30,19 @@ const Hero = () => {
 									justifyContent={'center'}
 									alignItems={'center'}
 									fontWeight={'600'}
+									style={{ background: '#79E0EE' }}
+									borderRadius={'1rem'}
 								>
 									{item.icon}
 								</Box>
 								<hr />
-								<Box textAlign={'center'}>
+								<Box
+									textAlign={'center'}
+								>
 									<Text
 										textDecoration={'none'}
 										fontSize={'1.2rem'}
+										color={'#91737f'}
 									>
 										{item.title}
 									</Text>

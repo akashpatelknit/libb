@@ -10,7 +10,7 @@ const Partical = () => {
 	const particlesLoaded = useCallback(async (engine) => {}, []);
 	return (
 		<Particles
-    className='partical'
+			className="partical"
 			id="tsparticles"
 			init={particlesInit}
 			loaded={particlesLoaded}
@@ -18,7 +18,7 @@ const Partical = () => {
 				fullScrean: { enable: false },
 				background: {
 					color: {
-						value: '#272b31',
+						value: '#79E0EE',
 					},
 				},
 				fpsLimit: 120,
@@ -46,10 +46,10 @@ const Partical = () => {
 				},
 				particles: {
 					color: {
-						value: '#e68e2e',
+						value: '#FBFFDC',
 					},
 					links: {
-						color: '#f5d393',
+						color: '#98EECC',
 						distance: 150,
 						enable: true,
 						opacity: 0.5,
