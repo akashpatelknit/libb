@@ -32,12 +32,6 @@ const Navbar = () => {
               <Link to="/book" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Books</Link>
             </li>
             <li>
-              <Link to="/exam" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>Exam Papers</Link>
-            </li>
-             <li>
-              <Link to="/ct" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>CT Exam Papers</Link>
-            </li>
-            <li>
               <Link to="/about" onClick={() => {setShowMediaIcons(!showMediaIcons)}}>About Us</Link>
             </li>
             {isAuthenticated && (
