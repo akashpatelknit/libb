@@ -1,42 +1,29 @@
-import { Image, Stack, Box, HStack, Text, Heading } from '@chakra-ui/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Blog.scss';
 
 const BlogCard = ({ title, url, author, datePublished, slug }) => {
 	return (
-		<Stack
-			width={'70%'}
-			borderRadius={'1rem'}
-			className="blog-card"
-			margin={'auto'}
-		>
-			<Box width={'100%'}>
-				<Link to={'/posts/' + slug}>
-					<Image src={url} width={'100%'} borderRadius={'1rem'} />
-				</Link>
-			</Box>
-			<Box textAlign={'center'}>
-				<Text fontWeight={'bold'}> {title}</Text>
-			</Box>
-			<HStack justifyContent={'space-evenly'} padding={'10px'}>
-				<HStack
-					justifyContent={'flex-start'}
-					alignItems={'center'}
-					width={'60%'}
-				>
-					<Image
-						src={author.avatar.url}
-						width={'15%'}
-						borderRadius={'1rem'}
-					/>
-					<Text> {author.name}</Text>
-				</HStack>
-				<HStack justifyContent={'center'}>
-					<Text>{datePublished}</Text>
-				</HStack>
-			</HStack>
-		</Stack>
+		<div class="container">
+			<div class="card">
+				<div class="card-header">
+					<Link to={'/posts/' + slug}>
+						<img src={url} alt="rover" />
+					</Link>
+				</div>
+				<div class="card-body">
+					<span class="tag tag-teal">Technology</span>
+					<h4>{title}</h4>
+					<div class="user">
+						<img src={author.avatar.url} alt="user" />
+						<div class="user-info">
+							<h5>{author.name}</h5>
+							<small>{datePublished}</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };
 

@@ -14,6 +14,8 @@ import Slug from "./components/Blog/Post/Slug"
 import Programming from "./pages/Programming/Programming";
 import Projects from "./pages/Projects/Projects";
 import Portfolio from "./pages/Portfolio/Portfolio";
+import Example from "./components/Editor/Editor";
+import AceExam from "./components/AceExam/AceExam";
 
 const App = () => {
   return (
@@ -25,10 +27,11 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/add" element={<Add/>} />
         <Route path="/book" element={<Book/>} />
-        <Route path="/exam" element={<Exam/>} />
-        <Route path="/ct" element={<CT/>} />
+        <Route path="/ace_exam" element={<AceExam/>} />
+        {/* <Route path="/ct" element={<CT/>} /> */}
         <Route path="/about" element={<About/>}/>
         <Route path="/blog" element={<Blog/>}/>
+        <Route path="/blog-post" element={<Example/>}/>
         <Route path="/posts/:slug" element={<Slug/>}/>
         <Route path="/programming" element={<Programming/>}/>
         <Route path="/portfolio" element={<Portfolio/>}/>
