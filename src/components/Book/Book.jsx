@@ -3,6 +3,7 @@ import Row from '../Row/Row';
 import axios from 'axios';
 import Partical from '../Partical/Partical';
 import { branch, options,url } from '../../data';
+import Loading from '../../pages/Loading';
 const Book = () => {
 	
 
@@ -53,94 +54,107 @@ const Book = () => {
 		<>
 			<div className="main">
 				<Partical />
-				<section>
-					<form onSubmit={handleSubmit}>
-						<div class="form-row">
-							<div class="form-item">
-								<label>Year</label>
-								<select
-									name="year"
-									onChange={(e) => setYear(e.target.value)}
-								>
-									<option value="">Year</option>
-									{options.map((option, index) => {
-										return (
-											<option key={index}>
-												{option}
-											</option>
-										);
-									})}
-								</select>
-							</div>
-							<div class="form-item">
-								<label>Subject</label>
-								<select
-									name="subject"
-									onChange={(e) => setSbject(e.target.value)}
-								>
-									<option value="">Subject</option>
-									{ys.map((option, index) => {
-										return (
-											<option key={index}>
-												{option}
-											</option>
-										);
-									})}
-								</select>
-							</div>
-							<div class="form-item">
-								<label>Branch</label>
-								<select
-									name="branch"
-									onChange={(e) =>
-										setBranchname(e.target.value)
-									}
-								>
-									<option value="">Branch</option>
-									{branch.map((option, index) => {
-										return (
-											<option key={index}>
-												{option}
-											</option>
-										);
-									})}
-								</select>
-							</div>
+				<Loading/>
+				{loading ?(<Loading/>):(<section>
+					<section>
+						<form onSubmit={handleSubmit}>
+							<div class="form-row">
+								<div class="form-item">
+									<label>Year</label>
+									<select
+										name="year"
+										onChange={(e) =>
+											setYear(e.target.value)
+										}
+									>
+										<option value="">Year</option>
+										{options.map((option, index) => {
+											return (
+												<option key={index}>
+													{option}
+												</option>
+											);
+										})}
+									</select>
+								</div>
+								<div class="form-item">
+									<label>Subject</label>
+									<select
+										name="subject"
+										onChange={(e) =>
+											setSbject(e.target.value)
+										}
+									>
+										<option value="">Subject</option>
+										{ys.map((option, index) => {
+											return (
+												<option key={index}>
+													{option}
+												</option>
+											);
+										})}
+									</select>
+								</div>
+								<div class="form-item">
+									<label>Branch</label>
+									<select
+										name="branch"
+										onChange={(e) =>
+											setBranchname(e.target.value)
+										}
+									>
+										<option value="">Branch</option>
+										{branch.map((option, index) => {
+											return (
+												<option key={index}>
+													{option}
+												</option>
+											);
+										})}
+									</select>
+								</div>
 
-							<div class="form-item">
-								<label>Semester</label>
-								<select
-									name="semester"
-									onChange={(e) =>
-										setSemester(e.target.value)
-									}
-								>
-									<option value="">Semester</option>
-									{sem.map((option, index) => {
-										return (
-											<option key={index}>
-												{option}
-											</option>
-										);
-									})}
-								</select>
+								<div class="form-item">
+									<label>Semester</label>
+									<select
+										name="semester"
+										onChange={(e) =>
+											setSemester(e.target.value)
+										}
+									>
+										<option value="">Semester</option>
+										{sem.map((option, index) => {
+											return (
+												<option key={index}>
+													{option}
+												</option>
+											);
+										})}
+									</select>
+								</div>
+								<div className="form-item">
+									<label>Search</label>
+									<input type="submit" />
+								</div>
 							</div>
-							<div className="form-item">
-								<label>Search</label>
-								<input type="submit" />
-							</div>
-						</div>
-					</form>
-				</section>
+						</form>
+					</section>
+
+					<section className="home">
+						<Row
+							title={'Recentaly Added'}
+							loading={loading}
+							arr={upcomingMovies}
+						/>
+						<Row
+							title={'Search Results'}
+							loading={loading}
+							arr={search}
+						/>
+					</section>
+				</section>)}
+				
 			</div>
-			<section className="home">
-				<Row
-					title={'Recentaly Added'}
-					loading={loading}
-					arr={upcomingMovies}
-				/>
-				<Row title={'Search Results'} loading={loading} arr={search} />
-			</section>
 		</>
 	);
 };

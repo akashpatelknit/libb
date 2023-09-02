@@ -3,7 +3,6 @@ import './Blog.scss';
 import { gql, GraphQLClient } from 'graphql-request';
 import BlogCard from './BlogCard';
 import { useState, useEffect } from 'react';
-import Example from '../Editor/Editor';
 const graphcms = new GraphQLClient(
 	'https://api-ap-south-1.hygraph.com/v2/cllffz1q5546101umad8oesvt/master'
 );

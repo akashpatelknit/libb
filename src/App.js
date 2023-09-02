@@ -6,9 +6,7 @@ import About from "./components/About/About";
 
 import {BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Exam from "./components/Exam/Exam";
 import Book from "./components/Book/Book";
-import CT from "./components/CT/CT";
 import Blog from "./components/Blog/Blog";
 import Slug from "./components/Blog/Post/Slug"
 import Programming from "./pages/Programming/Programming";
@@ -23,12 +21,10 @@ const App = () => {
       <Router>
       <Navbar/>
       <Routes>
-        
         <Route path="/" element={<Home/>} />
         <Route path="/add" element={<Add/>} />
         <Route path="/book" element={<Book/>} />
         <Route path="/ace_exam" element={<AceExam/>} />
-        {/* <Route path="/ct" element={<CT/>} /> */}
         <Route path="/about" element={<About/>}/>
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/blog-post" element={<Example/>}/>

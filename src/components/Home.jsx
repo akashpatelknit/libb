@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import axios from 'axios';
 import AOS from 'aos';
 import Lottie from 'lottie-react'
@@ -11,41 +11,36 @@ import { Button } from '@chakra-ui/react';
 import { features } from '../data';
 
 const Home = () => {
-	const url = 'https://libraryserver.vercel.app';
-	const [book, setbook] = useState([]);
-	const [exam, setexam] = useState([]);
-	const [ct, setct] = useState([]);
-	// const progAnimation = useRef<LottieRefCurrentProps>(null);
+	// const url = 'https://libraryserver.vercel.app';
 	useEffect(() => {
 		AOS.init({
 			offset: 200,
 			duration: 600,
-			// easing: 'ease-in-sine',
 			delay: 100,
 		});
 	}, []);
-	useMemo(() => {
-		const fetchbook = async () => {
-			let { data } = await axios.get(`${url}/get`);
-			data = data.filter((b) => b.type === 'Book');
-			console.log(data);
-			setbook(data);
-		};
-		const fetchexam = async () => {
-			let { data } = await axios.get(`${url}/get`);
-			data = data.filter((b) => b.type === 'Exam');
-			setexam(data);
-		};
-		const fetchct = async () => {
-			let { data } = await axios.get(`${url}/get`);
-			data = data.filter((b) => b.type === 'CT');
-			setct(data);
-		};
+	// useMemo(() => {
+	// 	const fetchbook = async () => {
+	// 		let { data } = await axios.get(`${url}/get`);
+	// 		data = data.filter((b) => b.type === 'Book');
+	// 		console.log(data);
+	// 		setbook(data);
+	// 	};
+	// 	const fetchexam = async () => {
+	// 		let { data } = await axios.get(`${url}/get`);
+	// 		data = data.filter((b) => b.type === 'Exam');
+	// 		setexam(data);
+	// 	};
+	// 	const fetchct = async () => {
+	// 		let { data } = await axios.get(`${url}/get`);
+	// 		data = data.filter((b) => b.type === 'CT');
+	// 		setct(data);
+	// 	};
 
-		fetchbook();
-		fetchexam();
-		fetchct();
-	}, []);
+	// 	fetchbook();
+	// 	fetchexam();
+	// 	fetchct();
+	// }, []);
 
 	return (
 		<>
