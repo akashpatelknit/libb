@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import axios from 'axios';
 import AOS from 'aos';
 import Lottie from 'lottie-react'
@@ -12,15 +12,10 @@ import { features } from '../data';
 
 const Home = () => {
 	const url = 'https://libraryserver.vercel.app';
-	const [book, setbook] = useState([]);
-	const [exam, setexam] = useState([]);
-	const [ct, setct] = useState([]);
-	// const progAnimation = useRef<LottieRefCurrentProps>(null);
 	useEffect(() => {
 		AOS.init({
 			offset: 200,
 			duration: 600,
-			// easing: 'ease-in-sine',
 			delay: 100,
 		});
 	}, []);
