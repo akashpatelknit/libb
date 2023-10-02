@@ -9,7 +9,6 @@ import './Home.scss';
 import { Link } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
 import { features } from '../data';
-
 const Home = () => {
 	// const url = 'https://libraryserver.vercel.app';
 	useEffect(() => {
@@ -19,29 +18,6 @@ const Home = () => {
 			delay: 100,
 		});
 	}, []);
-	// useMemo(() => {
-	// 	const fetchbook = async () => {
-	// 		let { data } = await axios.get(`${url}/get`);
-	// 		data = data.filter((b) => b.type === 'Book');
-	// 		console.log(data);
-	// 		setbook(data);
-	// 	};
-	// 	const fetchexam = async () => {
-	// 		let { data } = await axios.get(`${url}/get`);
-	// 		data = data.filter((b) => b.type === 'Exam');
-	// 		setexam(data);
-	// 	};
-	// 	const fetchct = async () => {
-	// 		let { data } = await axios.get(`${url}/get`);
-	// 		data = data.filter((b) => b.type === 'CT');
-	// 		setct(data);
-	// 	};
-
-	// 	fetchbook();
-	// 	fetchexam();
-	// 	fetchct();
-	// }, []);
-
 	return (
 		<>
 			<section className="home">

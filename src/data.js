@@ -111,7 +111,7 @@ export const features = [
 		link: '/announcement',
 	},
 	{
-		id: 1,
+		id: 6,
 		title: '📂 Resource Center',
 		description:
 			'Download lecture notes, study materials, and other valuable resources to enhance your learning. Access everything you need in one organized hub.',

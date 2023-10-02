@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { store } from './store';
+import  store  from './store';
 import { Provider } from 'react-redux';
 import App from './App';
-
 import { Auth0Provider } from '@auth0/auth0-react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	// <Provider store={store}>
+	<Provider store={store}>
 		<Auth0Provider
 			domain="dev-qjse0h14uy5n0cp1.us.auth0.com"
 			clientId="6wQi5wXzCIR07C5TW8GtlvGEU1c5ZSrj"
@@ -17,5 +16,7 @@ root.render(
 		>
 			<App />
 		</Auth0Provider>
-	// </Provider>
+	</Provider>
 );
+
+
