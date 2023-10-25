@@ -1,0 +1,16 @@
+.add {
+	width: 80%;
+	margin: auto;
+	img {
+		width: 100%;
+	}
+}
+.previev {
+	width: 100%;
+}
+@media screen and (max-width: 768px) {
+	.add {
+		width: 90%;
+		margin: auto;
+	}
+}
